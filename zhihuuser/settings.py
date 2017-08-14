@@ -42,7 +42,9 @@ ROBOTSTXT_OBEY = False
 DEFAULT_REQUEST_HEADERS = {
    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
    'Accept-Language': 'en',
-   'User_Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36'
+   'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+   'authorization':'Bearer Mi4wQUZCQTBRa1g1UWtBTUlMYWVMNzlDeGNBQUFCaEFsVk5jQU95V1FEUW1DRHd1MF9lRUpBNjUwNndZazVnUHRfQ1pB|1502246512|e6d3b4553751f90a66ab403b2ee7e0e1ae103851'
+
 }
 
 # Enable or disable spider middlewares
@@ -65,9 +67,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'zhihuuser.pipelines.ZhihuuserPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'zhihuuser.pipelines.MongoPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -89,3 +91,5 @@ DEFAULT_REQUEST_HEADERS = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+MONGO_URI='localhost'
+MONGO_DATABASE='zhihu'
